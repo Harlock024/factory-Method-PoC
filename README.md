@@ -37,7 +37,7 @@ class Moto extends Vehiculo {
 ```typescript
 class CreadorCarro extends CreadorVehiculo {
     crearVehiculo(): Vehiculo {
-        return new Coche();
+        return new Carro();
     }
 }
 
@@ -56,7 +56,7 @@ class CreadorMoto extends CreadorVehiculo {
 
 ```typescript
 
-const creadorCarro = new CreadorCoche();
+const creadorCarro = new CreadorCarro();
 creadorCarro.conducirVehiculo();
 
 const creadorMoto = new CreadorMoto();
