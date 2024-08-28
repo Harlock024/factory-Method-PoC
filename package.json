@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "ts-node-dev src/factoryMethod.ts"
+  },
+  "dependencies": {
+    "ts-node-dev": "^2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
