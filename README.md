@@ -16,7 +16,7 @@ abstract class Vehiculo {
 ```typescript
 class Carro extends Vehiculo {
     conducir(): void {
-        console.log("Conduciendo un coche.");
+        console.log("Conduciendo un carro.");
     }
 }
 
@@ -35,7 +35,7 @@ class Moto extends Vehiculo {
 - **Creadores concretos**
 
 ```typescript
-class CreadorCoche extends CreadorVehiculo {
+class CreadorCarro extends CreadorVehiculo {
     crearVehiculo(): Vehiculo {
         return new Coche();
     }
@@ -56,10 +56,10 @@ class CreadorMoto extends CreadorVehiculo {
 
 ```typescript
 
-const creadorCoche = new CreadorCoche();
-creadorCoche.conducirVehiculo();
+const creadorCarro = new CreadorCoche();
+creadorCarro.conducirVehiculo();
 
 const creadorMoto = new CreadorMoto();
 creadorMoto.conducirVehiculo();
 
-``
+```
