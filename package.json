@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "ts-node-dev src/factoryMethod.ts"
+    "dev": "ts-node-dev"
   },
   "dependencies": {
     "ts-node-dev": "^2.0.0"

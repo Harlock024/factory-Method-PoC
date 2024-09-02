@@ -1,11 +1,12 @@
 # Factory Method - PoC
 
 
-- **clase abstracta**
+- **Interface**
 
 ``` typescript
-abstract class Vehiculo {
-    abstract conducir(): void;
+
+export interface file {
+  open(): void;
 }
 
 ```
@@ -14,52 +15,56 @@ abstract class Vehiculo {
 - **Productos concretos**
 
 ```typescript
-class Carro extends Vehiculo {
-    conducir(): void {
-        console.log("Conduciendo un carro.");
-    }
+ class WordFile implements file {
+  open(): void {
+    console.log("open word file (.docx)");
+  }
 }
 
-class Moto extends Vehiculo {
-    conducir(): void {
-        console.log("Conduciendo una moto.");
-    }
+class PdfFile implements file {
+  open(): void {
+    console.log("open pdf file (.pdf)");
+  }
 }
 
-
-
+class TxtFile implements file {
+  open(): void {
+    console.log("open txt file (.txt)");
+  }
+}
 
 ```
 
 
-- **Creadores concretos**
+- **Creadores**
 
 ```typescript
-class CreadorCarro extends CreadorVehiculo {
-    crearVehiculo(): Vehiculo {
-        return new Carro();
+class FactoyFile {
+  static createFile(type: string): file | null {
+    if (type === "word") {
+      return new WordFile();
+    } else if (type === "pdf") {
+      return new PdfFile();
+    } else if (type === "txt") {
+      return new TxtFile();
     }
+    return null;
+  }
 }
-
-class CreadorMoto extends CreadorVehiculo {
-    crearVehiculo(): Vehiculo {
-        return new Moto();
-    }
-}
-
-
 
 ```
 
 - **Uso de Patron**
 
-
 ```typescript
 
-const creadorCarro = new CreadorCarro();
-creadorCarro.conducirVehiculo();
+const file_1 = FactoyFile.createFile("word");
+file_1?.open();
+const file_2 = FactoyFile.createFile("pdf");
+file_2?.open();
+const file_3 = FactoyFile.createFile("txt");
+file_3?.open();
 
-const creadorMoto = new CreadorMoto();
-creadorMoto.conducirVehiculo();
+
 
 ```
